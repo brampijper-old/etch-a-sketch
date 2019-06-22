@@ -44,11 +44,10 @@ function addMouseEvents(element, opacity) {
     element.addEventListener("mouseout", (e) => {
        element.style.background = "black";
        element.style.transition = "1s";
-       element.style.opacity = `${addOpacity(opacity)}`;
+       let opacity = element.style.opacity;
+       element.style.opacity = opacity ?  (parseFloat(opacity) + 0.1) : 0.2;
     })
 }
-
-
 
 function clearGrid() {
     while (container.hasChildNodes()) {
@@ -60,9 +59,6 @@ function random(max) {
     return Math.floor(Math.random() * Math.floor(max))
 }
 
-function addOpacity(opacity) {
-    //somehow have to increase opacity every time the user hovers of the same black.
-}
 
 
 

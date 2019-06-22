@@ -21,6 +21,6 @@ button {
 
 .grid-container > div {
     background-color: black;
-    opacity:0;
+    opacity:0.1;
   }
 
