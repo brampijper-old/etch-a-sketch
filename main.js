@@ -1,8 +1,59 @@
 const container = document.querySelector('#container');
-const amountOfDiv = 256;
+const containerWidth = 700; 
 
-for(let i = 0; i < amountOfDiv; i++) {
-    let squareDiv  = document.createElement('div');
-    squareDiv.classList.add('grid-item')
-    container.appendChild(squareDiv)
+const clearGridBtn = document.querySelector('#clearGridBtn');
+let squaresPerSide = 50;
+
+//Build up grid first time page is loaded
+buildGrid(squaresPerSide)
+
+clearGridBtn.addEventListener('click', () => {
+    clearGrid();
+    showPrompt()
+})
+
+function showPrompt() {
+    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid?", ""));
+    buildGrid(squaresPerSide)
 }
+
+function buildGrid(squaresPerSide) {
+    let totalSquares = squaresPerSide * squaresPerSide;
+    let squareSize = containerWidth / squaresPerSide;
+
+    container.style.gridTemplateColumns = `repeat(${squaresPerSide}, auto [col-start])`;
+    container.style.gridTemplateRows = `repeat(${squaresPerSide}, auto [row-start])`;
+
+    for(let i = 0; i < totalSquares; i++) {
+        let squareDiv  = document.createElement('div');
+        squareDiv.classList.add('grid-item')
+        squareDiv.style.width = squareSize;
+        squareDiv.style.height = squareSize;        
+    
+        addMouseEvents(squareDiv)
+    
+        container.appendChild(squareDiv)
+    }
+}
+
+function addMouseEvents(element) {
+    element.addEventListener("mouseover", (e) => {
+        element.style.background = "white";
+        element.style.transition = "0s";
+    })
+    element.addEventListener("mouseout", (e) => {
+       element.style.background = "#25237A";
+       element.style.transition = "1s";
+    })
+}
+
+
+
+function clearGrid() {
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild)
+    }
+}
+
+
+

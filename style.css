@@ -1,19 +1,25 @@
-*, body, html {
+*, html {
     padding: 0;
     margin: 0;
 }
 
+body {
+    margin: 10px;
+}
+
+button {
+    display:block;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 .grid-container {
-    display: inline-grid;
-    grid-template-columns: repeat(16, 50px [col-start]);
-    grid-template-rows: repeat(16, 50px [row-start]);
-    grid-gap: 10px;
+    width: 700px;
+    height: 700px; 
+    display: grid;
 }
 
 .grid-container > div {
-    background-color: rgba(238, 30, 30, 0.8);
-    padding: 1px 1px;
-    width:50px;
-    height:50px;
+    background-color: #25237A;
   }
 
