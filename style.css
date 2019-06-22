@@ -20,6 +20,7 @@ button {
 }
 
 .grid-container > div {
-    background-color: #25237A;
+    background-color: black;
+    opacity:0;
   }
 

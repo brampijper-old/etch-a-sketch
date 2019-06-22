@@ -36,14 +36,15 @@ function buildGrid(squaresPerSide) {
     }
 }
 
-function addMouseEvents(element) {
+function addMouseEvents(element, opacity) {
     element.addEventListener("mouseover", (e) => {
-        element.style.background = "white";
+        element.style.background = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
         element.style.transition = "0s";
     })
     element.addEventListener("mouseout", (e) => {
-       element.style.background = "#25237A";
+       element.style.background = "black";
        element.style.transition = "1s";
+       element.style.opacity = `${addOpacity(opacity)}`;
     })
 }
 
@@ -53,6 +54,14 @@ function clearGrid() {
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild)
     }
+}
+
+function random(max) {
+    return Math.floor(Math.random() * Math.floor(max))
+}
+
+function addOpacity(opacity) {
+    //somehow have to increase opacity every time the user hovers of the same black.
 }
 
 
