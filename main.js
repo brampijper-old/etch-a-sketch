@@ -2,7 +2,7 @@ const container = document.querySelector('#container');
 const containerWidth = 700; 
 
 const clearGridBtn = document.querySelector('#clearGridBtn');
-let squaresPerSide = 50;
+let squaresPerSide = 20;
 
 //Build up grid first time page is loaded
 buildGrid(squaresPerSide)
@@ -13,7 +13,7 @@ clearGridBtn.addEventListener('click', () => {
 })
 
 function showPrompt() {
-    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid?", ""));
+    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid?", "10"));
     buildGrid(squaresPerSide)
 }
 
