@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap');
+
 *, html {
     padding: 0;
     margin: 0;
@@ -6,23 +8,34 @@
 body {
     margin: 10px;
     background-color: #D4D4D4;
-    font-family: "Arial"; 
-    font-weight: bold;
+    font-family: "Roboto", sans-serif; 
+}
+
+.btn-container {
+    padding: 50px;
+    display:flex;
+}
+
+.btn-container > div {
+    margin: 0 auto;
+    display:flex;
+    align-items:center;
 }
 
 h1 {
-    text-align:center;
+    font-size: 40px;
     margin: 50px;
+    font-weight: 100;
+    text-decoration: underline;
 }
 
 button {
     margin: 0 auto;
-    display:block;
-    padding: 10px;
-    margin-bottom: 50px;
+    padding: 11px;
     background-color: #D4D4D4;
     border: solid black 1px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
@@ -34,8 +47,8 @@ button:hover {
 
 .grid-container {
     margin: 0 auto;
-    width: 700px;
-    height: 700px; 
+    width: 519px;
+    height: auto; 
     display: grid;
     border: 10px solid #ED553B;
 }
