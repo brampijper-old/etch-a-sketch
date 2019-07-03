@@ -1,5 +1,7 @@
 const container = document.querySelector('#container');
-const containerWidth = 700; 
+const gridContainer = document.querySelector('.grid-container');
+
+const containerWidth = gridContainer.offsetWidth - 20; 
 
 const clearGridBtn = document.querySelector('#clearGridBtn');
 let squaresPerSide = 20;
@@ -13,7 +15,8 @@ clearGridBtn.addEventListener('click', () => {
 })
 
 function showPrompt() {
-    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid?", "10"));
+    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid? \n *max 60 squares", "10"));
+    squaresPerSide > 60 ? squaresPerSide = 60 : squaresPerSide; 
     buildGrid(squaresPerSide)
 }
 
