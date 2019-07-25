@@ -15,9 +15,9 @@ clearGridBtn.addEventListener('click', () => {
 })
 
 function showPrompt() {
-    let customSquares = Number(window.prompt("How many squares per side to make the new grid? \n *max 60 squares", "10"));
+    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid? \n *max 60 squares", "10"));
 
-    if(customSquares > 60 || customSquares <= 0) { squaresPerSide = 60}
+    if(squaresPerSide > 60 || squaresPerSide <= 0) { squaresPerSide = 60}
 
     buildGrid(squaresPerSide)
 }
@@ -43,12 +43,12 @@ function buildGrid(squaresPerSide) {
     }
 }
 
-function addMouseEvents(element, opacity) {
-    element.addEventListener("mouseover", (e) => {
+function addMouseEvents(element) {
+    element.addEventListener('mouseover', (e) => {
         element.style.background = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
         element.style.transition = "0s";
     })
-    element.addEventListener("mouseout", (e) => {
+    element.addEventListener('mouseout', (e) => {
        element.style.background = "black";
        element.style.transition = "1s";
        let opacity = element.style.opacity;
@@ -65,7 +65,5 @@ function clearGrid() {
 function random(max) {
     return Math.floor(Math.random() * Math.floor(max))
 }
-
-
 
 
