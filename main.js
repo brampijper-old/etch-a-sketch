@@ -15,12 +15,16 @@ clearGridBtn.addEventListener('click', () => {
 })
 
 function showPrompt() {
-    squaresPerSide = Number(window.prompt("How many squares per side to make the new grid? \n *max 60 squares", "10"));
-    squaresPerSide > 60 ? squaresPerSide = 60 : squaresPerSide; 
+    let customSquares = Number(window.prompt("How many squares per side to make the new grid? \n *max 60 squares", "10"));
+
+    if(customSquares > 60 || customSquares <= 0) { squaresPerSide = 60}
+
     buildGrid(squaresPerSide)
 }
 
 function buildGrid(squaresPerSide) {
+
+    
     let totalSquares = squaresPerSide * squaresPerSide;
     let squareSize = containerWidth / squaresPerSide;
 
